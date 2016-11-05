@@ -1,59 +1,61 @@
-import math
-
-a = [4, 5, 7, 3, 6, 22, 45, 82]
-d=len(str(max(a)))
-i=0
-for element in a:
-    n = len(str(element))
-    if n<d :
-      a[i]=a[i]*(10**(d-n))
-      i=i+1
-
-digits = [int(x) for x in a]
-print digits[0][1]
-
-
-
-
 
 
 import math
-
-a = [4, 15, 7, 3, 6, 22, 45, 82]
-
-a1 = [[] for _ in xrange(len(a))]
+a=[22,3,1,132,6,89,123]
+p=[None] * len(a)
 b = [[] for _ in xrange(10)]
-
+t=a[:]
 d=len(str(max(a)))
-print d
-i=0
-for element in a:
-    n = len(str(element))
-    print n
-    a[i]=a[i]*(10**(d-n))
-    i=i+1
-    print a
+[str(item).zfill(d) for item in a]
 
-for x in xrange(0,len(a)) :
-   a1[x].append(a[x]%10)
-   print a1
+u=[None] * len(a)
 
-    
-print '\n'
-print a1[0]
-print a1[1]
-i=0
-for x in xrange(0,len(a)) :    
-  for u in range(0,len(a)) :
-    if a1[u]==0 :
-      #b[x].append(a[u])
-      print a[u]
-  i=i+1
-
-print b[1]
-
-for u in range(0,len(a)) :
-   print b[u]  
+k=-1
+n=0
+def digit(a,n,k):
+   t=a[:]
+   k=k+1
+   print "t ki value"
+   print t
+   
+   for x in xrange(0,len(a)) :
+    u[x]=t[x]/(10)**n
+    p[x]=u[x]%10
+   print "digit:"
+   print p
+   print '\n'
+   bucket(p)
+   if k<2 :
+     n=n+1
+     digit(a,n,k)
     
 
+def putno(b):
+  i=0
+  for x in xrange(0,10):
+    l=len(b[x])
+    for q in range(0,l):
+       a[i]=b[x][q]
+       i=i+1
+  
+  print a
+  print "\n\n"
+  t=a[:]
 
+        
+        
+def bucket(p):
+ for i in range(0,10):
+   for x in xrange(0,len(a)):
+    if p[x]==i:
+      b[i].append(a[x])
+ print b
+ print "a is now \n"
+ 
+ putno(b) 
+ for sublist in b: 
+    del sublist[:]
+
+
+        
+digit(a,n,k)
