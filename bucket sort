@@ -1,8 +1,8 @@
 def bucketsort() :
  for u in range (0,10) :
       l=len(b[u])
-      
-      for x in xrange (0,l-1) :
+      #print (l)
+      for x in range (0,l-1) :
          for j in range (x+1,l) :
            if b[u][x]>b[u][j] :
              b[u][x],b[u][j]=b[u][j],b[u][x]
@@ -13,29 +13,33 @@ def buck() :
 
  divider=math.ceil( d )
 
- for x in xrange( 0,10 ) :
+ for x in range( 0,len(mylist) ) :
    j=int(math.floor( mylist[x]/divider ))
    b[j].append(mylist[x])
-   
+   #print (j)
   
-
+ #for x in range(0,10) :
+   #print (b[x])
 
 def display() :
- for k in range(0,10) :
+ for k in range(0,len(mylist)) :
    l=len(b[k])
    for m in range(0,l):
      a[k]=b[k][m]
-     print a[k]
+     print (a[k])
  
   
 
 import math
 import decimal
-mylist = [ 22 , 45 , 12 , 8 , 10 , 30 ,6 , 72 , 81 ,33 ]
+n=int(input())
+
+mylist=[int(x) for x in input().split()]
 max=81
 
-b = [[] for _ in xrange(len(mylist))]
-a=[[] for _ in xrange(len(mylist))]
+b = [[] for _ in range(10)]
+a=[[] for _ in range(len(mylist))]
 buck()
 bucketsort()
 display()
+
