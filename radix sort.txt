@@ -1,0 +1,61 @@
+
+
+import math
+a=[22,3,1,132,6,89,123]
+p=[None] * len(a)
+b = [[] for _ in xrange(10)]
+t=a[:]
+d=len(str(max(a)))
+[str(item).zfill(d) for item in a]
+
+u=[None] * len(a)
+
+k=-1
+n=0
+def digit(a,n,k):
+   t=a[:]
+   k=k+1
+   print "t ki value"
+   print t
+   
+   for x in xrange(0,len(a)) :
+    u[x]=t[x]/(10)**n
+    p[x]=u[x]%10
+   print "digit:"
+   print p
+   print '\n'
+   bucket(p)
+   if k<2 :
+     n=n+1
+     digit(a,n,k)
+    
+
+def putno(b):
+  i=0
+  for x in xrange(0,10):
+    l=len(b[x])
+    for q in range(0,l):
+       a[i]=b[x][q]
+       i=i+1
+  
+  print a
+  print "\n\n"
+  t=a[:]
+
+        
+        
+def bucket(p):
+ for i in range(0,10):
+   for x in xrange(0,len(a)):
+    if p[x]==i:
+      b[i].append(a[x])
+ print b
+ print "a is now \n"
+ 
+ putno(b) 
+ for sublist in b: 
+    del sublist[:]
+
+
+        
+digit(a,n,k)

@@ -1,0 +1,45 @@
+def bucketsort() :
+ for u in range (0,10) :
+      l=len(b[u])
+      #print (l)
+      for x in range (0,l-1) :
+         for j in range (x+1,l) :
+           if b[u][x]>b[u][j] :
+             b[u][x],b[u][j]=b[u][j],b[u][x]
+
+def buck() :
+ bucket=10
+ d= decimal.Decimal( max+1 ) / decimal.Decimal( bucket )
+
+ divider=math.ceil( d )
+
+ for x in range( 0,len(mylist) ) :
+   j=int(math.floor( mylist[x]/divider ))
+   b[j].append(mylist[x])
+   #print (j)
+  
+ #for x in range(0,10) :
+   #print (b[x])
+
+def display() :
+ for k in range(0,len(mylist)) :
+   l=len(b[k])
+   for m in range(0,l):
+     a[k]=b[k][m]
+     print (a[k])
+ 
+  
+
+import math
+import decimal
+n=int(input())
+
+mylist=[int(x) for x in input().split()]
+max=81
+
+b = [[] for _ in range(10)]
+a=[[] for _ in range(len(mylist))]
+buck()
+bucketsort()
+display()
+
